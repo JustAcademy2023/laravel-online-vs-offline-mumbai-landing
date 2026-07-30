@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laravel Online Course vs Offline Course: Which Is Better in Mumbai</title>
+<meta name="description" content="Online or offline? A fun, honest scorecard comparing Laravel courses in Mumbai, plus career context, top institutes and a course to get started.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAFAF7;
+    --card:#FFFFFF;
+    --ink:#1A1A2E;
+    --ink-soft:#3E3E55;
+    --muted:#6A6A80;
+    --line:#E7E5DE;
+    --red:#FF2D20;
+    --red-deep:#D91F14;
+    --blue:#3AA0FF;
+    --blue-deep:#1C7FDB;
+    --amber:#FFA630;
+    --amber-deep:#E08A10;
+    --dark:#14141F;
+    --dark-soft:#1C1C2C;
+    --radius:20px;
+    --max:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Manrope',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:'Fira Code',monospace;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  img,svg{display:block;max-width:100%;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,250,247,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--max);margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem;letter-spacing:-0.01em;color:var(--ink);}
+  .logo-mark{
+    width:32px;height:32px;border-radius:9px;background:var(--red);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.05rem;font-weight:800;
+    transform:rotate(0deg);animation:tilt 3s ease-in-out infinite;
+  }
+  @keyframes tilt{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+  nav.links{display:flex;gap:26px;font-size:0.92rem;font-weight:500;color:var(--muted);}
+  nav.links a:hover{color:var(--red-deep);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:999px;
+    font-weight:700;font-size:0.9rem;
+    background:var(--red);color:#fff;
+    box-shadow:0 10px 24px -10px rgba(255,45,32,0.55);
+    transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);background:var(--red-deep);box-shadow:0 14px 30px -8px rgba(217,31,20,0.6);}
+  .btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink);box-shadow:none;}
+  .btn.ghost:hover{border-color:var(--red);color:var(--red-deep);transform:translateY(-2px);}
+
+  /* ---------- HERO / VS SPLIT ---------- */
+  .hero{position:relative;padding:90px 24px 70px;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:-15% -10%;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(58,160,255,0.14), transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(255,166,48,0.16), transparent 42%);
+    z-index:-1;
+  }
+  .hero-head{max-width:720px;margin:0 auto 46px;text-align:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--red-deep);background:rgba(255,45,32,0.08);
+    border:1px solid rgba(255,45,32,0.25);
+    padding:7px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  h1.hero-title{font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.14;letter-spacing:-0.02em;margin:0 0 18px;color:var(--ink);font-weight:800;}
+  h1.hero-title span{color:var(--red);}
+  .hero-sub{font-size:1.03rem;color:var(--muted);max-width:56ch;margin:0 auto;line-height:1.65;}
+
+  .vs-wrap{position:relative;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .vs-badge{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:78px;height:78px;border-radius:50%;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.05rem;
+    box-shadow:0 0 0 6px var(--cream), 0 20px 40px -14px rgba(20,20,31,0.5);
+    z-index:5;animation:pulse-vs 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse-vs{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.08);}}
+  .side{padding:44px 40px;position:relative;}
+  .side.online{background:linear-gradient(150deg,#0f2540,#123354);border-radius:24px 0 0 24px;color:#eaf3ff;}
+  .side.offline{background:linear-gradient(210deg,#3a2408,#4a2f08);border-radius:0 24px 24px 0;color:#fff3e2;}
+  .side .tag{
+    display:inline-block;font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .side.online .tag{background:var(--blue);color:#04223f;}
+  .side.offline .tag{background:var(--amber);color:#3a2408;}
+  .side h3{font-size:1.5rem;margin:0 0 14px;font-weight:800;}
+  .side ul{list-style:none;padding:0;margin:0 0 8px;display:flex;flex-direction:column;gap:10px;}
+  .side li{font-size:0.92rem;line-height:1.5;display:flex;gap:10px;align-items:flex-start;}
+  .side.online li::before{content:"✓";color:var(--blue);font-weight:800;}
+  .side.offline li::before{content:"✓";color:var(--amber);font-weight:800;}
+  @media (max-width:820px){
+    .vs-wrap{grid-template-columns:1fr;gap:14px;}
+    .side.online, .side.offline{border-radius:24px;}
+    .vs-badge{position:static;transform:none;margin:0 auto;}
+  }
+
+  /* ---------- SECTION SHELLS ---------- */
+  section{padding:88px 24px;}
+  .section-head{max-width:640px;margin:0 auto 50px;text-align:center;}
+  .section-head .kicker{
+    font-size:0.76rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red-deep);margin-bottom:12px;display:block;
+  }
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-0.01em;margin:0 0 14px;color:var(--ink);font-weight:800;}
+  .section-head p{color:var(--muted);font-size:1rem;line-height:1.65;}
+
+  .band-dark{background:var(--dark-soft);color:#f2f2fa;}
+  .band-dark .section-head p{color:#a8a8c0;}
+  .band-dark .section-head h2{color:#f2f2fa;}
+
+  /* ---------- SCORECARD ---------- */
+  .scorecard{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;}
+  .score-row{
+    display:grid;grid-template-columns:1fr 100px 100px;align-items:center;
+    padding:18px 26px;border-bottom:1px solid var(--line);gap:10px;
+  }
+  .score-row:last-child{border-bottom:none;}
+  .score-row .cat{font-weight:600;font-size:0.95rem;color:var(--ink);}
+  .score-row .pick{text-align:center;font-size:1.3rem;}
+  .score-row .pick.win{filter:none;}
+  .score-row .pick.lose{opacity:0.2;}
+  .score-head{
+    display:grid;grid-template-columns:1fr 100px 100px;padding:16px 26px;
+    background:var(--ink);color:#fff;font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .score-head span:nth-child(2){color:var(--blue);text-align:center;}
+  .score-head span:nth-child(3){color:var(--amber);text-align:center;}
+  @media (max-width:600px){
+    .score-row, .score-head{grid-template-columns:1fr 60px 60px;padding:14px 16px;font-size:0.85rem;}
+  }
+
+  /* ---------- CARDS ---------- */
+  .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:var(--max);margin:0 auto;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(255,45,32,0.2);border-color:rgba(255,45,32,0.3);}
+  .card .icon{
+    width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--red-deep),var(--red));
+    margin-bottom:16px;color:#fff;font-size:1.15rem;font-weight:800;
+  }
+  .card h3{margin:0 0 8px;font-size:1.08rem;color:var(--ink);font-weight:700;}
+  .card p{margin:0;color:var(--muted);font-size:0.93rem;line-height:1.6;}
+
+  .band-dark .card{background:#22223a;border-color:#2f2f4a;}
+  .band-dark .card h3{color:#f2f2fa;}
+  .band-dark .card p{color:#a8a8c0;}
+
+  /* ---------- COURSE FEATURE ---------- */
+  .feature-card{
+    max-width:var(--max);margin:0 auto;
+    display:grid;grid-template-columns:1.2fr 1fr;
+    background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;
+  }
+  .fc-copy{padding:46px;}
+  .fc-copy .tag{
+    display:inline-block;font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;
+    color:#fff;background:var(--red);padding:5px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .fc-copy h3{font-size:1.55rem;margin:0 0 14px;letter-spacing:-0.01em;color:var(--ink);font-weight:800;}
+  .fc-copy p{color:var(--muted);line-height:1.7;margin:0 0 26px;}
+  .fc-visual{
+    position:relative;background:
+      radial-gradient(circle at 30% 30%, rgba(255,45,32,0.25), transparent 60%),
+      radial-gradient(circle at 75% 75%, rgba(58,160,255,0.2), transparent 60%);
+    background-color:#14141f;
+    display:flex;align-items:center;justify-content:center;min-height:220px;
+  }
+  .fc-visual .badge{
+    width:120px;height:120px;border-radius:32px;
+    background:linear-gradient(135deg,var(--red-deep),var(--red));
+    display:flex;align-items:center;justify-content:center;
+    font-size:2.4rem;font-weight:800;color:#fff;
+    box-shadow:0 20px 40px -16px rgba(217,31,20,0.7);
+    animation:float 4s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-12px) rotate(2deg);}}
+  @media (max-width:900px){.feature-card{grid-template-columns:1fr;}}
+
+  /* ---------- BLOG / LINK CARDS ---------- */
+  .link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:var(--max);margin:0 auto;}
+  .link-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:0;overflow:hidden;display:flex;flex-direction:column;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .link-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(20,20,31,0.22);}
+  .link-card .lc-top{padding:24px 24px 0;}
+  .link-card .lc-tag{
+    display:inline-block;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--red-deep);background:rgba(255,45,32,0.08);padding:5px 11px;border-radius:999px;margin-bottom:14px;
+  }
+  .link-card h3{font-size:1.02rem;margin:0 0 10px;color:var(--ink);line-height:1.35;font-weight:700;}
+  .link-card p{color:var(--muted);font-size:0.88rem;line-height:1.6;margin:0 0 20px;}
+  .link-card .lc-bottom{
+    margin-top:auto;padding:16px 24px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:0.84rem;color:var(--red);
+  }
+  .link-card .lc-bottom .arrow{transition:transform 0.25s ease;}
+  .link-card:hover .lc-bottom .arrow{transform:translateX(5px);}
+  @media (max-width:900px){.link-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.link-grid{grid-template-columns:1fr;}}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:0 auto;}
+  details{border-bottom:1px solid var(--line);padding:20px 4px;}
+  details summary{
+    cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink);
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";font-size:1.4rem;color:var(--red);transition:transform 0.25s ease;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{color:var(--muted);line-height:1.7;margin:14px 0 0;font-size:0.95rem;}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{
+    max-width:var(--max);margin:0 auto;
+    background:linear-gradient(120deg,var(--red-deep),var(--red) 60%,var(--amber));
+    border-radius:28px;padding:54px 44px;
+    display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;color:#fff;
+  }
+  .cta-banner h2{margin:0 0 8px;font-size:1.8rem;letter-spacing:-0.01em;color:#fff;font-weight:800;}
+  .cta-banner p{margin:0;opacity:0.9;max-width:46ch;}
+  .cta-banner .btn{background:#14141f;color:#fff;box-shadow:0 14px 30px -10px rgba(0,0,0,0.4);}
+  .cta-banner .btn:hover{background:#000;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--dark);color:#c2c2d6;padding:64px 24px 30px;}
+  .foot-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-size:0.83rem;text-transform:uppercase;letter-spacing:0.08em;color:#787890;margin:0 0 18px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .foot-grid a{color:#c2c2d6;font-size:0.92rem;}
+  .foot-grid a:hover{color:var(--red);}
+  .foot-bottom{
+    max-width:var(--max);margin:50px auto 0;padding-top:24px;border-top:1px solid #26263c;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#54546c;font-size:0.85rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .grid-cards{grid-template-columns:1fr 1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    nav.links{display:none;}
+    .grid-cards{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .cta-banner{flex-direction:column;text-align:center;}
+    section{padding:64px 20px;}
+    .hero{padding:80px 20px 50px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">
+      <span class="logo-mark">L</span>
+      laravel<span style="color:var(--red-deep);">.mumbai</span>
+    </a>
+    <nav class="links">
+      <a href="#scorecard">Scorecard</a>
+      <a href="#why">Why Laravel</a>
+      <a href="#course">Course</a>
+      <a href="#reads">Blog</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="https://www.justacademy.co/course-detail/mumbai/laravel-training-in-mumbai" target="_blank" rel="noopener">Explore Course →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO / VS -->
+  <section class="hero">
+    <div class="hero-head">
+      <span class="eyebrow">The Mumbai Face Off</span>
+      <h1 class="hero-title">Laravel Online <span>vs</span> Offline Course: Which One Actually Wins?</h1>
+      <p class="hero-sub">Same framework, same city, two very different learning experiences. Here's an honest side by side before you pick either one.</p>
+    </div>
+    <div class="vs-wrap">
+      <div class="side online">
+        <span class="tag">Online</span>
+        <h3>Learn From Anywhere</h3>
+        <ul>
+          <li>Learn on your own schedule, any hour</li>
+          <li>Pause and rewind confusing lectures</li>
+          <li>No commute eating into your evening</li>
+          <li>Usually easier on the wallet</li>
+        </ul>
+      </div>
+      <div class="vs-badge">VS</div>
+      <div class="side offline">
+        <span class="tag">Offline</span>
+        <h3>Learn In The Room</h3>
+        <ul>
+          <li>Real time debugging with someone beside you</li>
+          <li>Fixed schedule keeps you accountable</li>
+          <li>Group projects build real collaboration skills</li>
+          <li>Instructor reads confusion on your face</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCORECARD -->
+  <section id="scorecard">
+    <div class="section-head">
+      <span class="kicker">Category By Category</span>
+      <h2>The honest scorecard</h2>
+      <p>Neither format wins every round. Here's how they actually stack up, category by category.</p>
+    </div>
+    <div class="scorecard">
+      <div class="score-head"><span>Category</span><span>Online</span><span>Offline</span></div>
+      <div class="score-row"><span class="cat">Flexibility</span><span class="pick win">🏆</span><span class="pick lose">—</span></div>
+      <div class="score-row"><span class="cat">Cost</span><span class="pick win">🏆</span><span class="pick lose">—</span></div>
+      <div class="score-row"><span class="cat">Real time debugging help</span><span class="pick lose">—</span><span class="pick win">🏆</span></div>
+      <div class="score-row"><span class="cat">Accountability</span><span class="pick lose">—</span><span class="pick win">🏆</span></div>
+      <div class="score-row"><span class="cat">Commute friendliness</span><span class="pick win">🏆</span><span class="pick lose">—</span></div>
+      <div class="score-row"><span class="cat">Peer collaboration</span><span class="pick lose">—</span><span class="pick win">🏆</span></div>
+      <div class="score-row"><span class="cat">Pace control</span><span class="pick win">🏆</span><span class="pick lose">—</span></div>
+    </div>
+  </section>
+
+  <!-- WHY LARAVEL -->
+  <section class="band-dark" id="why">
+    <div class="section-head">
+      <span class="kicker">Before You Pick A Format</span>
+      <h2>Why Laravel is worth this debate at all</h2>
+      <p>Choosing online or offline only matters if the framework itself is worth your time. Here's the short version of why it is.</p>
+    </div>
+    <div class="grid-cards">
+      <div class="card">
+        <div class="icon">⌗</div>
+        <h3>Clean, expressive syntax</h3>
+        <p>Laravel removes a huge amount of repetitive boilerplate so you focus on actual application logic.</p>
+      </div>
+      <div class="card">
+        <div class="icon">◫</div>
+        <h3>Genuinely in demand</h3>
+        <p>Agencies and product companies across Mumbai regularly list Laravel as a core backend requirement.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✎</div>
+        <h3>A gentle framework curve</h3>
+        <p>If you know basic PHP, Laravel's conventions make the jump to structured applications far less painful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSE FEATURE -->
+  <section id="course">
+    <div class="feature-card">
+      <div class="fc-copy">
+        <span class="tag">Laravel Training in Mumbai</span>
+        <h3>Whichever format you choose, choose it seriously</h3>
+        <p>A structured Laravel training program built for Mumbai's job market, covering routing, Eloquent, authentication and real deployment practice.</p>
+        <a class="btn" href="https://www.justacademy.co/course-detail/mumbai/laravel-training-in-mumbai" target="_blank" rel="noopener">View Course Details →</a>
+      </div>
+      <div class="fc-visual">
+        <div class="badge">L</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOGS -->
+  <section id="reads" class="band-dark">
+    <div class="section-head">
+      <span class="kicker">Go Deeper</span>
+      <h2>Read the full guides</h2>
+      <p>Three detailed reads worth going through before you commit to a format or an institute.</p>
+    </div>
+    <div class="link-grid">
+      <a class="link-card" href="https://www.justacademy.co/blog-detail/laravel-online-course-vs-offline-course-which-is-better-in-mumbai" target="_blank" rel="noopener">
+        <div class="lc-top">
+          <span class="lc-tag">The Full Debate</span>
+          <h3>Laravel Online Course vs Offline Course: Which Is Better in Mumbai</h3>
+          <p>The full comparison this page is based on, mapped against Mumbai's commute and classroom realities.</p>
+        </div>
+        <div class="lc-bottom">Read the blog <span class="arrow">→</span></div>
+      </a>
+      <a class="link-card" href="https://www.justacademy.co/blog-detail/top-10-laravel-training-institutes-in-mumbai-which-one-should-you-choose" target="_blank" rel="noopener">
+        <div class="lc-top">
+          <span class="lc-tag">Institute Guide</span>
+          <h3>Top 10 Laravel Training Institutes in Mumbai: Which One Should You Choose</h3>
+          <p>A proper comparison of the city's leading Laravel training options, not just a shallow ranked list.</p>
+        </div>
+        <div class="lc-bottom">Read the blog <span class="arrow">→</span></div>
+      </a>
+      <a class="link-card" href="https://www.justacademy.co/blog-detail/is-laravel-worth-learning-in-2026-career-opportunities-in-mumbai" target="_blank" rel="noopener">
+        <div class="lc-top">
+          <span class="lc-tag">Career Outlook</span>
+          <h3>Is Laravel Worth Learning in 2026? Career Opportunities in Mumbai</h3>
+          <p>Where this skill actually leads career wise across Mumbai's agencies and product teams.</p>
+        </div>
+        <div class="lc-bottom">Read the blog <span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-head">
+      <span class="kicker">Quick Answers</span>
+      <h2>Before you decide</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Is one format objectively better than the other?</summary>
+        <p>No. It genuinely depends on your commute, your discipline, and whether you learn better with structure or flexibility.</p>
+      </details>
+      <details>
+        <summary>Can I mix both formats?</summary>
+        <p>Yes, and many learners do. Online for fundamentals at your own pace, offline sessions for project reviews and doubt clearing.</p>
+      </details>
+      <details>
+        <summary>Does the commute really matter that much?</summary>
+        <p>In a city like Mumbai, yes. A long commute can quietly make an otherwise great offline course unsustainable.</p>
+      </details>
+      <details>
+        <summary>How do I get started?</summary>
+        <p>Start with the course page linked above, then read the three guides for deeper context on format, institutes and career outlook.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta-banner">
+      <div>
+        <h2>Ready to actually start learning Laravel?</h2>
+        <p>Pick a format that fits your life, then commit to a structured course that takes it seriously.</p>
+      </div>
+      <a class="btn" href="https://www.justacademy.co/course-detail/mumbai/laravel-training-in-mumbai" target="_blank" rel="noopener">View Course Details →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="logo" style="margin-bottom:14px;color:#f2f2fa;">
+        <span class="logo-mark">L</span>
+        laravel<span style="color:var(--red);">.mumbai</span>
+      </div>
+      <p style="color:#787890;font-size:0.9rem;line-height:1.6;max-width:32ch;">An honest, side by side look at learning Laravel online versus offline in Mumbai.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#scorecard">Scorecard</a></li>
+        <li><a href="#why">Why Laravel</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Course</h4>
+      <ul>
+        <li><a href="https://www.justacademy.co/course-detail/mumbai/laravel-training-in-mumbai" target="_blank" rel="noopener">Laravel Training</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Read</h4>
+      <ul>
+        <li><a href="https://www.justacademy.co/blog-detail/laravel-online-course-vs-offline-course-which-is-better-in-mumbai" target="_blank" rel="noopener">Online vs Offline</a></li>
+        <li><a href="https://www.justacademy.co/blog-detail/top-10-laravel-training-institutes-in-mumbai-which-one-should-you-choose" target="_blank" rel="noopener">Top 10 Institutes</a></li>
+        <li><a href="https://www.justacademy.co/blog-detail/is-laravel-worth-learning-in-2026-career-opportunities-in-mumbai" target="_blank" rel="noopener">Career Outlook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 laravel.mumbai. A community learning guide.</span>
+    <span>May the better format win</span>
+  </div>
+</footer>
+
+</body>
+</html>
